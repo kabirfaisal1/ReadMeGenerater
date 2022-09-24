@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-const file_system = require('fs');
+const fs = require('fs');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -21,7 +21,7 @@ const questions = [
 {
     type: 'input',
     name: 'Deployed_URL',
-    message: 'What is the Deployed URL (Required)',
+    message: 'What is the Deployed URL? (Required)',
     validate: deployedURLInput => {
         if (deployedURLInput) {
             return true;
@@ -34,12 +34,12 @@ const questions = [
 {
     type: 'input',
     name: 'gitRepo',
-    message: 'What is the gitRepo (Required)',
+    message: 'What is the gitRepo link? (Required)',
     validate: gitRepoInput => {
         if (gitRepoInput) {
             return true;
         } else {
-            console.log('Please enter gitRepo');
+            console.log('Please enter gitRepo link');
             return false;
         }
     }
@@ -47,7 +47,7 @@ const questions = [
 {
     type: 'input',
     name: 'User_Story',
-    message: 'What is the User Story',
+    message: 'What is the User Story?',
     validate: UserStory_Input => {
         if (UserStory_Input) {
             return true;
@@ -60,7 +60,7 @@ const questions = [
 {
     type: 'input',
     name: 'Acceptance_Criteria',
-    message: 'What is the Acceptance Criteria',
+    message: 'What is the Acceptance Criteria?',
     validate: AcceptanceCriteria_Input => {
         if (AcceptanceCriteria_Input) {
             return true;
@@ -71,10 +71,10 @@ const questions = [
     }
 },
 {
-    type: 'Checkbox',
-    name: 'dependency',
-    message: 'What are the Dependency (Required)',
-    choices: ['node.js', 'nmp', 'ASP.Net', 'PHP'],
+    type: 'checkbox',
+    name: 'prerequisite',
+    message: 'prerequisite: System need node.js?',
+    choices: ['Yes', 'No'],
     validate: Dependency_Input => {
         if (Dependency_Input) {
             return true;
@@ -84,14 +84,40 @@ const questions = [
         }
     }
 },
+{
+    type: 'checkbox',
+    name: 'dependency',
+    message: 'What are the Dependency? (Required)',
+    choices: ['npm install inquirer', 'nmp init', 'ASP.Net', 'PHP'],
+    validate: Dependency_Input => {
+        if (Dependency_Input) {
+            return true;
+        } else {
+            console.log('Please enter Dependency');
+            return false;
+        }
+    }
+},
+{
+    type: 'list',
+    name: 'license',
+    message: 'Which license will you use for your project?',
+    choices: ['agpl', 'apache', 'mit', 'no license']
+},
+{
+    type: 'input',
+    name: 'screenshots',
+    message: 'List screenshots with comma-separated',
+    
+},
 
 
 ];
 
 // TODO: Create a function to write README file
-var writeToFile = file_output=> {
+var writeFile = file_output=> {
     return new Promise((resolve, reject) => {
-        fs.writeFile('./output//generated-README.md', fileContent, err => {
+        fs.writeFile('./output/generated-README.md', file_output, err => {
             if (err) {
                 reject(err);
                 return;

@@ -41,40 +41,34 @@ function generateMarkdown(data) {
     return `
     # ${data.title}
     
-    ${renderLicenseBadge(data.license)}
-    ## Table-of-Contents
-    * [Description](#description)
-    * [Installation](#installation)
-    * [Usage](#usage)
-    ${renderLicenseTOC(data.license)}
-    * [Contributing](#contributing)
-    * [Tests](#tests)
-    * [Questions](#questions)
-    
-    ## [Description](#table-of-contents)
+
+    ## [Description]
+    ## [Deployed URL]
     ${data.Deployed_URL}
+
+    ## GitRepo
     ${data.gitRepo}
+
+    ## User Story
     ${data.User_Story}
+
+    ## Acceptance_Criteria
     ${data.Acceptance_Criteria}
 
-    ## [Installation](#table-of-contents)
+    ## prerequisite
+    ${data.prerequisite}
+
+    ## [Dependency]
     ${data.dependency}
  
+    ## License 
+    ${renderLicenseLink(data.license)}
+    ${renderLicenseBadge(data.license)}
+
+    ## Screenshots 
+    ${data.screenshots}
+  
     
-    For more information on how to add screenshots for examples, visit the following website:
-    
-    [Mark Down Tutorial](https://agea.github.io/tutorial.md/)
-    
-    ${renderLicenseSection(data.license)}
-    ## [Contributing](#table-of-contents)
-    
-    ${renderContributingSection(data.confirmContributers, data.contribute)}
-    ## [Tests](#table-of-contents)
-    ${data.test}
-    ## [Questions](#table-of-contents)
-    Please contact me using the following links:
-    [GitHub](https://github.com/${data.githubUsername})
-    [Email: ${data.email}](mailto:${data.email})
   `;
   }
 
