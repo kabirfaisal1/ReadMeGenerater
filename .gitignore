@@ -4,12 +4,14 @@ Hugo files
 
 /.hugo_build.lock
 
+./node_modules
 
 
 
 # Numerous always-ignore extensions
 
 *.diff
+
 
 *.err
 
