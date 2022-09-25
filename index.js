@@ -19,6 +19,25 @@ const questions = [
     }
 },
 {
+    type: 'list',
+    name: 'license',
+    message: 'Which license will you use for your project?',
+    choices: ['agpl', 'apache', 'mit', 'no license']
+},
+{
+    type: 'input',
+    name: 'gitUserName',
+    message: 'What is the git userName? (Required)',
+    validate: deployedURLInput => {
+        if (deployedURLInput) {
+            return true;
+        } else {
+            console.log('Please enter Deployed URL!');
+            return false;
+        }
+    }
+},
+{
     type: 'input',
     name: 'Deployed_URL',
     message: 'What is the Deployed URL? (Required)',
@@ -58,19 +77,6 @@ const questions = [
     }
 },
 {
-    type: 'input',
-    name: 'Acceptance_Criteria',
-    message: 'What is the Acceptance Criteria?',
-    validate: AcceptanceCriteria_Input => {
-        if (AcceptanceCriteria_Input) {
-            return true;
-        } else {
-            console.log('Please enter Acceptance Criteria');
-            return false;
-        }
-    }
-},
-{
     type: 'checkbox',
     name: 'prerequisite',
     message: 'prerequisite: System need node.js?',
@@ -99,16 +105,28 @@ const questions = [
     }
 },
 {
-    type: 'list',
-    name: 'license',
-    message: 'Which license will you use for your project?',
-    choices: ['agpl', 'apache', 'mit', 'no license']
+    type: 'input',
+    name: 'application_invoked',
+    message: 'What will invoked application ? (Required)',
+    validate: application_invoked => {
+        if (application_invoked) {
+            return true;
+        } else {
+            console.log('Please enter Dependency');
+            return false;
+        }
+    }
 },
 {
     type: 'input',
-    name: 'screenshots',
-    message: 'List screenshots with comma-separated',
-    
+    name: 'testCase',
+    message: 'What are the Test case',
+},
+{
+    type: 'input',
+    name: 'contribution',
+    message: 'Who are the collaborators ',
+
 },
 
 
