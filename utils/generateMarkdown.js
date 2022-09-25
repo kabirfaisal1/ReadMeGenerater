@@ -35,7 +35,7 @@ function generateMarkdown(data) {
   * [Application_Invoked](#applicationinvoked)
 
   ## License 
-  ${ renderLicenseBadge(data.license)}
+  ${renderLicenseBadge(data.license)}
    
 
   ## [UserName](#table-of-contents)
@@ -45,32 +45,31 @@ function generateMarkdown(data) {
   ${data.description}
    
   ## [Deployed_URL](#table-of-contents)
-    ${data.deployed_url}
+  ${data.deployed_url}
 
   ## [GitRepositories](#table-of-contents)
-    ${data.gitRepo}
+  ${data.gitRepo}
 
   ## [UserStory](#table-of-contents)
-    ${data.user_story}
-
-
+  ${data.user_story}
+  
   ## [Prerequisites](#table-of-contents)
   Your system will need to have
-    ${data.prerequisite}
+  ${data.prerequisite}
 
   ## [Dependency](#table-of-contents)
   Your project file need to have
-    ${data.dependency}
+  ${data.dependency}
 
   ## [Application_Invoked](#table-of-contents)
   The application will be invoked by using the following command:
-    ${data.application_invoked}
+  ${data.application_invoked}
 
   ## Test Case
-   ${data.testCase}
+  ${data.testCase}
 
-   ## Collaborators are
-   ${data.contribution}
+  ## Collaborators are
+  ${data.contribution}
  
 `;
   }

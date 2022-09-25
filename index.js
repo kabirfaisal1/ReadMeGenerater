@@ -32,7 +32,7 @@ const questions = [
         if (description) {
             return true;
         } else {
-            console.log('Please enter Deployed URL!');
+            console.log('Please enter description');
             return false;
         }
     }
@@ -40,12 +40,12 @@ const questions = [
 {
     type: 'input',
     name: 'gitUserName',
-    message: 'What is the git userName? (Required)',
+    message: 'What is the GitHub UserName? (Required)',
     validate: deployedURLInput => {
         if (deployedURLInput) {
             return true;
         } else {
-            console.log('Please enter Deployed URL!');
+            console.log('Please enter GitHub UserName');
             return false;
         }
     }
@@ -84,7 +84,7 @@ const questions = [
         if (user_story) {
             return true;
         } else {
-            console.log('Please enter gitRepo');
+            console.log('Please enter User Story');
             return false;
         }
     }
@@ -94,32 +94,22 @@ const questions = [
     name: 'prerequisite',
     message: 'prerequisite: System need node.js?',
     choices: ['Yes', 'No'],
-    validate: prerequisite_input => {
-        if (prerequisite_input) {
-            return true;
-    
-         
-        } else {
-            console.log('Please enter Dependency');
-            return false;
-        }
-    }
 },
 {
     type: 'checkbox',
     name: 'dependency',
-    message: 'What are the Dependency?',
+    message: 'What are the Dependency for this project?',
     choices: ['npm install inquirer', 'nmp init', 'ASP.Net', 'PHP'],
 },
 {
     type: 'input',
     name: 'application_invoked',
-    message: 'What will invoked application ? (Required)',
+    message: 'What is the CLI command to invoked the application ? (Required)',
     validate: application_invoked => {
         if (application_invoked) {
             return true;
         } else {
-            console.log('Please enter Dependency');
+            console.log('Please enter application invoked CLI command');
             return false;
         }
     }
