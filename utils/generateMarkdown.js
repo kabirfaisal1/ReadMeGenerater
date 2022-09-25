@@ -25,10 +25,10 @@ function generateMarkdown(data) {
 # ${data.title}
 
   ## Table-of-Contents
-  * [UserName](#gitUserName)
+  * [UserName](#username)
   * [Descriptions](#description)
-  * [Deployed_URL](#deployed_url)
-  * [GitRepositories]](#gitRepositories)
+  * [Deployed_URL](#deployedurl)
+  * [GitRepositories](#gitRepositories)
   * [UserStory](#userstory)
   * [Prerequisites](#prerequisite)
   * [Dependency](#dependency)
@@ -61,7 +61,7 @@ function generateMarkdown(data) {
   Your project file need to have
   ${data.dependency}
 
-  ## [Application_Invoked](#table-of-contents)
+  ## [ApplicationInvoked](#table-of-contents)
   The application will be invoked by using the following command:
   ${data.application_invoked}
 
