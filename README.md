@@ -9,6 +9,9 @@ When creating an open source project on GitHub, it’s important to have a high-
 ```   
     https://github.com/kabirfaisal1/ReadMeGenerater.git
 ```
+## Walk-through Video
+https://vimeo.com/753642221
+
 ## IMPORTANT Application invoked 
 ```
     node index.js
