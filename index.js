@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-const file_system = require('fs');
+const fs = require('fs');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -19,9 +19,41 @@ const questions = [
     }
 },
 {
+    type: 'list',
+    name: 'license',
+    message: 'Which license will you use for your project?',
+    choices: ['GNU AGPLv3', 'Apache', 'MIT','GNU GPLv3','GNU LGPLv3','Mozilla','No License']
+},
+{
     type: 'input',
-    name: 'Deployed_URL',
-    message: 'What is the Deployed URL (Required)',
+    name: 'description',
+    message: 'What is the description? (Required)',
+    validate: description => {
+        if (description) {
+            return true;
+        } else {
+            console.log('Please enter description');
+            return false;
+        }
+    }
+},
+{
+    type: 'input',
+    name: 'gitUserName',
+    message: 'What is the GitHub UserName? (Required)',
+    validate: deployedURLInput => {
+        if (deployedURLInput) {
+            return true;
+        } else {
+            console.log('Please enter GitHub UserName');
+            return false;
+        }
+    }
+},
+{
+    type: 'input',
+    name: 'deployed_url',
+    message: 'What is the Deployed URL? (Required)',
     validate: deployedURLInput => {
         if (deployedURLInput) {
             return true;
@@ -34,64 +66,73 @@ const questions = [
 {
     type: 'input',
     name: 'gitRepo',
-    message: 'What is the gitRepo (Required)',
+    message: 'What is the gitRepo link? (Required)',
     validate: gitRepoInput => {
         if (gitRepoInput) {
             return true;
         } else {
-            console.log('Please enter gitRepo');
+            console.log('Please enter gitRepo link');
             return false;
         }
     }
 },
 {
     type: 'input',
-    name: 'User_Story',
-    message: 'What is the User Story',
-    validate: UserStory_Input => {
-        if (UserStory_Input) {
+    name: 'user_story',
+    message: 'What is the User Story?',
+    validate: user_story => {
+        if (user_story) {
             return true;
         } else {
-            console.log('Please enter gitRepo');
+            console.log('Please enter User Story');
             return false;
         }
     }
 },
 {
-    type: 'input',
-    name: 'Acceptance_Criteria',
-    message: 'What is the Acceptance Criteria',
-    validate: AcceptanceCriteria_Input => {
-        if (AcceptanceCriteria_Input) {
-            return true;
-        } else {
-            console.log('Please enter Acceptance Criteria');
-            return false;
-        }
-    }
+    type: 'list',
+    name: 'prerequisite',
+    message: 'prerequisite: System need node.js?',
+    choices: ['Yes', 'No'],
 },
 {
-    type: 'Checkbox',
+    type: 'checkbox',
     name: 'dependency',
-    message: 'What are the Dependency (Required)',
-    choices: ['node.js', 'nmp', 'ASP.Net', 'PHP'],
-    validate: Dependency_Input => {
-        if (Dependency_Input) {
+    message: 'What are the Dependency for this project?',
+    choices: ['npm install inquirer', 'nmp init', 'ASP.Net', 'PHP'],
+},
+{
+    type: 'input',
+    name: 'application_invoked',
+    message: 'What is the CLI command to invoked the application ? (Required)',
+    validate: application_invoked => {
+        if (application_invoked) {
             return true;
         } else {
-            console.log('Please enter Dependency');
+            console.log('Please enter application invoked CLI command');
             return false;
         }
     }
+},
+{
+    type: 'input',
+    name: 'testCase',
+    message: 'What are the Test case',
+},
+{
+    type: 'input',
+    name: 'contribution',
+    message: 'Who are the collaborators ',
+
 },
 
 
 ];
 
 // TODO: Create a function to write README file
-var writeToFile = file_output=> {
+var writeFile = file_output=> {
     return new Promise((resolve, reject) => {
-        fs.writeFile('./output//generated-README.md', fileContent, err => {
+        fs.writeFile('./output/README.md', file_output, err => {
             if (err) {
                 reject(err);
                 return;

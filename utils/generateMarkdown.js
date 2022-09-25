@@ -1,81 +1,77 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-    if (license !== 'no license') {
-        return `
-      ![badge](https://img.shields.io/badge/license-${license}-blue)
-        `;
-      } else {
-        return ' ';
-      }
-}
-
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license)  {
-    if (license !== 'no license') {
-    return `
-    [${license}](https://choosealicense.com/licenses/${license})
-      `;
-    } else {
-      return ' ';
-    }
+function renderLicenseBadge(license) {
+  if (license == "GNU AGPLv3") {
+    return "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)";
+  } else if (license == "GNU GPLv3") {
+    return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+  } else if (license == "GNU LGPLv3") {
+    return "[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)";
+  } else if (license == "Mozilla") {
+    return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+  } else if (license == "MIT") {
+    return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+  } else if (license == "Apache") {
+    return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+  } else {
+    return "No License";
   }
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(confirmContributers, data) {
-    if (!confirmContributers) {
-      return `
-    Thank you for your interest in helping out; however, I will not be accepting contributions from third parties.
-      `;
-    } else {
-      return `
-    ${data}
-      `;
-    }
-  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
     return `
-    # ${data.title}
-    
-    ${renderLicenseBadge(data.license)}
-    ## Table-of-Contents
-    * [Description](#description)
-    * [Installation](#installation)
-    * [Usage](#usage)
-    ${renderLicenseTOC(data.license)}
-    * [Contributing](#contributing)
-    * [Tests](#tests)
-    * [Questions](#questions)
-    
-    ## [Description](#table-of-contents)
-    ${data.Deployed_URL}
-    ${data.gitRepo}
-    ${data.User_Story}
-    ${data.Acceptance_Criteria}
+# ${data.title}
 
-    ## [Installation](#table-of-contents)
-    ${data.dependency}
+  ## Table-of-Contents
+  * [UserName](#username)
+  * [Descriptions](#description)
+  * [Deployed_URL](#deployedurl)
+  * [GitRepositories](#gitRepositories)
+  * [UserStory](#userstory)
+  * [Prerequisites](#prerequisite)
+  * [Dependency](#dependency)
+  * [Application_Invoked](#applicationinvoked)
+
+  ## License 
+  ${renderLicenseBadge(data.license)}
+   
+
+  ## [UserName](#table-of-contents)
+  ${data.gitUserName}
+    
+  ## [Descriptions](#table-of-contents)
+  ${data.description}
+   
+  ## [Deployed_URL](#table-of-contents)
+  ${data.deployed_url}
+
+  ## [GitRepositories](#table-of-contents)
+  ${data.gitRepo}
+
+  ## [UserStory](#table-of-contents)
+  ${data.user_story}
+  
+  ## [Prerequisites](#table-of-contents)
+  Your system will need to have
+  ${data.prerequisite}
+
+  ## [Dependency](#table-of-contents)
+  Your project file need to have
+  ${data.dependency}
+
+  ## [ApplicationInvoked](#table-of-contents)
+  The application will be invoked by using the following command:
+  ${data.application_invoked}
+
+  ## Test Case
+  ${data.testCase}
+
+  ## Collaborators are
+  ${data.contribution}
  
-    
-    For more information on how to add screenshots for examples, visit the following website:
-    
-    [Mark Down Tutorial](https://agea.github.io/tutorial.md/)
-    
-    ${renderLicenseSection(data.license)}
-    ## [Contributing](#table-of-contents)
-    
-    ${renderContributingSection(data.confirmContributers, data.contribute)}
-    ## [Tests](#table-of-contents)
-    ${data.test}
-    ## [Questions](#table-of-contents)
-    Please contact me using the following links:
-    [GitHub](https://github.com/${data.githubUsername})
-    [Email: ${data.email}](mailto:${data.email})
-  `;
+`;
   }
 
 module.exports = generateMarkdown;
