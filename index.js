@@ -22,7 +22,20 @@ const questions = [
     type: 'list',
     name: 'license',
     message: 'Which license will you use for your project?',
-    choices: ['agpl', 'apache', 'mit', 'no license']
+    choices: ['GNU AGPLv3', 'Apache', 'MIT','GNU GPLv3','GNU LGPLv3','Mozilla','No License']
+},
+{
+    type: 'input',
+    name: 'description',
+    message: 'What is the description? (Required)',
+    validate: description => {
+        if (description) {
+            return true;
+        } else {
+            console.log('Please enter Deployed URL!');
+            return false;
+        }
+    }
 },
 {
     type: 'input',
@@ -39,7 +52,7 @@ const questions = [
 },
 {
     type: 'input',
-    name: 'Deployed_URL',
+    name: 'deployed_url',
     message: 'What is the Deployed URL? (Required)',
     validate: deployedURLInput => {
         if (deployedURLInput) {
@@ -65,10 +78,10 @@ const questions = [
 },
 {
     type: 'input',
-    name: 'User_Story',
+    name: 'user_story',
     message: 'What is the User Story?',
-    validate: UserStory_Input => {
-        if (UserStory_Input) {
+    validate: user_story => {
+        if (user_story) {
             return true;
         } else {
             console.log('Please enter gitRepo');
@@ -77,13 +90,15 @@ const questions = [
     }
 },
 {
-    type: 'checkbox',
+    type: 'list',
     name: 'prerequisite',
     message: 'prerequisite: System need node.js?',
     choices: ['Yes', 'No'],
-    validate: Dependency_Input => {
-        if (Dependency_Input) {
+    validate: prerequisite_input => {
+        if (prerequisite_input) {
             return true;
+    
+         
         } else {
             console.log('Please enter Dependency');
             return false;
@@ -93,16 +108,8 @@ const questions = [
 {
     type: 'checkbox',
     name: 'dependency',
-    message: 'What are the Dependency? (Required)',
+    message: 'What are the Dependency?',
     choices: ['npm install inquirer', 'nmp init', 'ASP.Net', 'PHP'],
-    validate: Dependency_Input => {
-        if (Dependency_Input) {
-            return true;
-        } else {
-            console.log('Please enter Dependency');
-            return false;
-        }
-    }
 },
 {
     type: 'input',

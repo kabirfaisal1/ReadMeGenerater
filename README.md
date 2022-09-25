@@ -16,8 +16,7 @@ When creating an open source project on GitHub, it’s important to have a high-
 
 ## User Story
 ```
-    AS A developer
-    I WANT a README generator
+    AS A developer I WANT a README generator
     SO THAT I can quickly create a professional README for a new project
 ```
 ## Acceptance Criteria
@@ -38,3 +37,16 @@ When creating an open source project on GitHub, it’s important to have a high-
     WHEN I click on the links in the Table of Contents
     THEN I am taken to the corresponding section of the README
 ```
+## Test Case
+1. With License
+2. Without License
+3. Don't answer one of the Required questions
+4. Do not select any checkbox.
+
+## Screen Shots  
+![Image at questions.](./images/questionScreenShots.png)
+![Image at Terminal return.](./images/terminalreturn.png.png)
+![Image at Test case 1.](./images/questionScreenShots.png)
+![Image at Test case 2.](./images/questionScreenShots.png)
+![Image at Test case 3.](./images/TestCase3.png)
+![Image at Test case 4.](./images/TestCase4.png)
