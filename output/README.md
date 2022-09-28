@@ -2,17 +2,17 @@
 # Professional README Generator
 
   ## Table-of-Contents
-  * [UserName](#gitUserName)
-  * [Descriptions](#description)
-  * [Deployed_URL](#deployed_url)
-  * [GitRepositories]](#gitRepositories)
+  * [UserName](#username)
+  * [Descriptions](#descriptions)
+  * [Deployed URL](#deployed-url)
+  * [GitRepositories](#gitrepositories)
   * [UserStory](#userstory)
-  * [Prerequisites](#prerequisite)
+  * [Prerequisites](#prerequisites)
   * [Dependency](#dependency)
-  * [Application_Invoked](#applicationinvoked)
+  * [Application Invoked](#application-invoked)
 
   ## License 
-  No License
+  [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
    
 
   ## [UserName](#table-of-contents)
@@ -21,7 +21,7 @@
   ## [Descriptions](#table-of-contents)
   When creating an open source project on GitHub, it’s important to have a high-quality README for the app. This should include what the app is for, how to use the app, how to install it, how to report issues, and how to make contributions—this last part increases the likelihood that other developers will contribute to the success of the project.
    
-  ## [Deployed_URL](#table-of-contents)
+  ## [Deployed URL](#table-of-contents)
   https://kabirfaisal1.github.io/ReadMeGenerater/
 
   ## [GitRepositories](#table-of-contents)
@@ -32,19 +32,19 @@
   
   ## [Prerequisites](#table-of-contents)
   Your system will need to have
-  No
+  Yes
 
   ## [Dependency](#table-of-contents)
   Your project file need to have
-  
+  npm install inquirer,nmp init
 
-  ## [Application_Invoked](#table-of-contents)
+  ## [Application Invoked](#table-of-contents)
   The application will be invoked by using the following command:
   node index.js
 
   ## Test Case
-  
+  1. With License 2. Without License 3. Don't answer one of the Required questions 4. Do not select any checkbox.
 
   ## Collaborators are
-  
+  Kabir Faisal
  

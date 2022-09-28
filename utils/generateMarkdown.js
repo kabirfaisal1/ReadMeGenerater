@@ -26,13 +26,13 @@ function generateMarkdown(data) {
 
   ## Table-of-Contents
   * [UserName](#username)
-  * [Descriptions](#description)
-  * [Deployed_URL](#deployedurl)
-  * [GitRepositories](#gitRepositories)
+  * [Descriptions](#descriptions)
+  * [Deployed URL](#deployed-url)
+  * [GitRepositories](#gitrepositories)
   * [UserStory](#userstory)
-  * [Prerequisites](#prerequisite)
+  * [Prerequisites](#prerequisites)
   * [Dependency](#dependency)
-  * [Application_Invoked](#applicationinvoked)
+  * [Application Invoked](#application-invoked)
 
   ## License 
   ${renderLicenseBadge(data.license)}
@@ -44,7 +44,7 @@ function generateMarkdown(data) {
   ## [Descriptions](#table-of-contents)
   ${data.description}
    
-  ## [Deployed_URL](#table-of-contents)
+  ## [Deployed URL](#table-of-contents)
   ${data.deployed_url}
 
   ## [GitRepositories](#table-of-contents)
@@ -61,7 +61,7 @@ function generateMarkdown(data) {
   Your project file need to have
   ${data.dependency}
 
-  ## [ApplicationInvoked](#table-of-contents)
+  ## [Application Invoked](#table-of-contents)
   The application will be invoked by using the following command:
   ${data.application_invoked}
 
