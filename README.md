@@ -54,6 +54,8 @@ https://vimeo.com/753642221
 ![Image at Test case 3.](./images/TestCase3.png)
 ![Image at Test case 4.](./images/TestCase4.png)
 
+## Test Case output 
+ ![Image at output](./images/outputTest.png.png)
 ## Node and NPM Doc
 https://nodejs.org/en/download/package-manager/
 https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
